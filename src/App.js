@@ -24,7 +24,7 @@ class AppProvider extends Component {
 const Green = () => (
   <div className='green'>
     <AppContext.Consumer>
-      {(context) => context.number}
+      {({number}) => number}
     </AppContext.Consumer>
   </div>
 )
@@ -32,7 +32,7 @@ const Green = () => (
 const Blue = () => (
   <div className='blue'>
     <AppContext.Consumer>
-      {(context) => <button onClick={context.inc}>INC</button>}
+      {({inc}) => <button onClick={inc}>INC</button>}
     </AppContext.Consumer>
     <Green />
   </div>
@@ -41,7 +41,7 @@ const Blue = () => (
 const Messenger = () => (
   <div className='messenger'>
     <AppContext.Consumer>
-      {(context) => context.message}
+      {({message}) => message}
     </AppContext.Consumer>
   </div>
 )
@@ -52,7 +52,7 @@ class App extends Component {
       <AppProvider>
         <div className="app">
           <AppContext.Consumer>
-            {(context) => context.number}
+            {({number}) => number}
           </AppContext.Consumer>
 
           <Blue />
